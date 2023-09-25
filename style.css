@@ -1,5 +1,81 @@
+/* 
+Donut bg images:
+https://www.pexels.com/photo/close-up-photo-of-pink-donuts-1982485/
+https://www.pexels.com/photo/doughnut-topped-with-colorful-sprinkles-in-tilt-shift-lens-3779945/
+https://www.pexels.com/photo/pink-doughnut-with-colorful-sprinkles-intilt-shift-lens-3784440/
+
+Donut images:
+https://pixabay.com/vectors/donut-donuts-bread-confectionery-1139832/
+https://pixabay.com/vectors/doughnut-vector-art-doughnut-2d-art-4363014/
+
+Simple bg:
+https://pixabay.com/illustrations/checks-gingham-checked-blue-white-937564/
+https://www.pexels.com/photo/blue-headphone-1037992/
+*/
+
+:root {
+  --font-base: "Poppins", sans-serif;
+  --font-display: "Berkshire Swash", cursive;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  background: rgb(250, 197, 192);
+  background: linear-gradient(157deg, #fac5c0 0%, #fac5c0 50%, #c9eae6 50%, #c9eae6 100%);
+  background-repeat: no-repeat;
+  font-family: var(--font-base);
+  color: #333;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: #5a0707;
+  text-shadow: 2px 2px #fff;
+}
+
+button {
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: inherit;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Play buttons */
+.play-buttons {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  padding: 1rem;
+  border: 4px dotted #fff;
+  border-radius: 15px;
+}
+
+.play-button {
+  flex-shrink: 0;
+  width: 140px;
+  height: 140px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 2px 2px 0 #8e2929;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 1px 2px 0 #8e2929;
 }

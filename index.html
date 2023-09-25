@@ -4,9 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Speedgame</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Poppins&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <main>
+      <h1>Speedgame</h1>
+      <p>Score: <span id="score">0</span></p>
+
+      <div class="play-buttons">
+        <div class="play-button" id="button0"></div>
+        <div class="play-button" id="button1"></div>
+        <div class="play-button" id="button2"></div>
+        <div class="play-button" id="button3"></div>
+      </div>
+
+      <button class="button" id="startGame">Start game</button>
+    </main>
+
     <script src="app.js"></script>
   </body>
 </html>
