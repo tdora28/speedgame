@@ -56,13 +56,17 @@ button {
   box-shadow: 1px 2px 0 #8e2929;
 }
 
+.button.hidden {
+  display: none;
+}
+
 main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   row-gap: 1.5rem;
-  min-height: 100vh;
+  min-height: calc(100vh - 3rem);
 }
 
 /* Circles */
@@ -102,12 +106,15 @@ main {
   top: 0;
   left: 0;
   z-index: 100;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.8);
+}
+.overlay.visible {
+  display: flex;
 }
 
 .modal {
@@ -118,8 +125,19 @@ main {
   border-radius: 15px;
 }
 
+.modal p:first-child {
+  font-size: 1.5rem;
+}
+
 .overlay button {
   position: absolute;
   top: 1rem;
   right: 1rem;
+  background: #fac5c0;
+}
+
+/* Footer */
+footer {
+  height: 3rem;
+  text-align: center;
 }

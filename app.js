@@ -3,6 +3,8 @@ const startButton = document.querySelector("#startButton");
 const endButton = document.querySelector("#endButton");
 const circles = document.querySelectorAll(".circle");
 const scoreDisplay = document.querySelector("#score");
+const modal = document.querySelector(".overlay");
+const closeModalButton = document.querySelector("#closeModalButton");
 
 // GLOBAL VARIABLES
 let score = 0;
@@ -17,6 +19,7 @@ let rounds = 0;
 const enableEvents = () => {
   circles.forEach((circle) => {
     circle.style.pointerEvents = "auto";
+    circle.style.cursor = "pointer";
   });
 };
 
@@ -26,6 +29,9 @@ const startGame = () => {
   if (rounds >= 3) {
     return endGame();
   }
+
+  startButton.classList.add("hidden");
+  endButton.classList.remove("hidden");
 
   // So we can click the circles
   enableEvents();
@@ -65,7 +71,7 @@ const startGame = () => {
 // End game function
 const endGame = () => {
   clearTimeout(timer);
-  resetGame();
+  showModal();
 };
 
 const resetGame = () => {
@@ -85,6 +91,26 @@ const clickCircle = (i) => {
 // Random num generator
 const getRndInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
+const showModal = () => {
+  modal.classList.add("visible");
+  modal.querySelector("#totalScore").textContent = score;
+
+  let message;
+  if (score < 100) {
+    message = "You don't have much appetite. Try again maybe later?";
+  } else if (score < 200) {
+    message = "You have a healthy appetite! Want some seconds?";
+  } else {
+    message = "Wow! Grandma would be really proud!";
+  }
+  modal.querySelector("#message").textContent = message;
+};
+
+const closeModal = () => {
+  modal.classList.remove("visible");
+  resetGame();
+};
+
 // EVENT LISTENERS
 
 // Start game button
@@ -92,6 +118,9 @@ startButton.addEventListener("click", startGame);
 
 // End game button
 endButton.addEventListener("click", endGame);
+
+// Modal button
+closeModalButton.addEventListener("click", closeModal);
 
 // Every circle
 circles.forEach((circle, i) => {

@@ -16,25 +16,27 @@
 
       <!-- Circles -->
       <div class="circles">
-        <div class="circle">0</div>
-        <div class="circle">1</div>
-        <div class="circle">2</div>
-        <div class="circle">3</div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
       </div>
 
       <!-- Buttons -->
       <button class="button" id="startButton">Start game</button>
-      <button class="button" id="endButton">End game</button>
+      <button class="button hidden" id="endButton">End game</button>
     </main>
 
     <!-- Modal -->
     <div class="overlay">
       <div class="modal">
-        <p>Total score: <span id="totalScore">0</span></p>
-        <p id="message">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione aperiam aut animi ab, rem nobis dolore repudiandae maxime repellendus praesentium?</p>
+        <p>Total score: <span id="totalScore"></span></p>
+        <p id="message"></p>
         <button class="button" id="closeModalButton">Close</button>
       </div>
     </div>
+
+    <footer><small>Copyright Dóra Tokai</small></footer>
     <script src="app.js"></script>
   </body>
 </html>
@@ -42,10 +44,10 @@
 <!-- 
 REQUIREMENTS
 1. Score update in 2 places: landing page, modal
-2. Clicking rigth circle gives you points (increment can be 1 or 10 etc.)
+2. Clicking right circle gives you points (increment can be 1 or 10 etc.)
 3. Circles are not clickable before game starts
 4. Start and end btns are displayed conditionally (during game there's end btn) - only 1 btn at a time
-5. Highlights come in random order, same num can be shown twice in a rows
+5. Highlights come in random order, same num can't be shown twice in a row
 6. After 3 highlights, if you don't touch anything, game will stop (stop mechanics)
 7. Game gets faster by every highlight
 8. Game can be ended: 1) click end game btn (build it right away), 2) clicking the wrong circle (one mistake), 3) timeout (after 3 highlights without interaction)
