@@ -17,6 +17,11 @@ https://www.pexels.com/photo/blue-headphone-1037992/
 :root {
   --font-base: "Poppins", sans-serif;
   --font-display: "Berkshire Swash", cursive;
+
+  --clr-pink: #fac5c0;
+  --clr-turqoise: #c9eae6;
+  --clr-font: #333;
+  --clr-shadow: #8e2929;
 }
 
 * {
@@ -26,18 +31,17 @@ https://www.pexels.com/photo/blue-headphone-1037992/
 }
 
 body {
-  background: rgb(250, 197, 192);
-  background: linear-gradient(157deg, #fac5c0 0%, #fac5c0 50%, #c9eae6 50%, #c9eae6 100%);
+  background: linear-gradient(157deg, var(--clr-pink) 0%, var(--clr-pink) 50%, var(--clr-turqoise) 50%, var(--clr-turqoise) 100%);
   background-attachment: fixed;
   background-repeat: no-repeat;
   font-family: var(--font-base);
-  color: #333;
+  color: var(--clr-font);
 }
 
 h1 {
   font-family: var(--font-display);
   font-size: 3rem;
-  color: #5a0707;
+  color: var(--clr-shadow);
   text-shadow: 2px 2px #fff;
 }
 
@@ -53,12 +57,12 @@ button {
   padding: 0.5rem 1rem;
   background: #fff;
   border-radius: 20px;
-  box-shadow: 1px 2px 0 #8e2929;
+  box-shadow: 1px 2px 0 var(--clr-shadow);
   transition: background 0.2s ease-in;
 }
 
 .button:hover {
-  background: #fac5c0;
+  background: var(--clr-pink);
 }
 
 .button:active {
@@ -99,7 +103,7 @@ main {
   height: 100px;
   background-color: #fff;
   border-radius: 50%;
-  box-shadow: 2px 2px 0 #8e2929;
+  box-shadow: 2px 2px 0 var(--clr-shadow);
   pointer-events: none;
 }
 
@@ -143,7 +147,7 @@ main {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: #fac5c0;
+  background: var(--clr-pink);
 }
 
 /* Footer */
