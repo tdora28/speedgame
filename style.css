@@ -54,6 +54,16 @@ button {
   background: #fff;
   border-radius: 20px;
   box-shadow: 1px 2px 0 #8e2929;
+  transition: background 0.2s ease-in;
+}
+
+.button:hover {
+  background: #fac5c0;
+}
+
+.button:active {
+  transform: translateY(2px);
+  box-shadow: 1px 2px 0 transparent;
 }
 
 .button.hidden {
