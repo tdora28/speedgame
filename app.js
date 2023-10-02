@@ -96,7 +96,7 @@ const clickCircle = (i) => {
   clickSound.play();
 
   rounds = 0;
-  score += 10;
+  score += 1;
   scoreDisplay.textContent = score;
 };
 
@@ -112,12 +112,14 @@ const showModal = () => {
 
   let message;
 
-  if (score < 100) {
+  if (score < 10) {
     message = "You don't have much appetite. Try again maybe later?";
-  } else if (score < 200) {
-    message = "You have a healthy appetite! Want some seconds?";
+  } else if (score < 30) {
+    message = "You have a healthy appetite!";
+  } else if (score < 50) {
+    message = "You really like donuts! Good job!";
   } else {
-    message = "Wow! Grandma would be really proud!";
+    message = "Wow! You ate so many donuts! Grandma would be really proud!";
   }
   modal.querySelector("#message").textContent = message;
 };
