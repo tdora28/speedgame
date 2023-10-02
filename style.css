@@ -1,11 +1,6 @@
 /* 
 RESOURCES
 
-Donut bg images:
-https://www.pexels.com/photo/close-up-photo-of-pink-donuts-1982485/
-https://www.pexels.com/photo/doughnut-topped-with-colorful-sprinkles-in-tilt-shift-lens-3779945/
-https://www.pexels.com/photo/pink-doughnut-with-colorful-sprinkles-intilt-shift-lens-3784440/
-
 Donut image:
 https://pixabay.com/vectors/donut-donuts-bread-confectionery-1139832/
 
@@ -14,9 +9,9 @@ Music by 29811401 from Pixabay
 Music by <a href="https://pixabay.com/users/29811401-29811401/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=120336">29811401</a> from <a href="https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=120336">Pixabay</a>
 
 Sound effects:
-Sound Effect by irinairinafomicheva from Pixabay
+1. Clicking: Sound Effect by irinairinafomicheva from Pixabay
 Sound Effect by <a href="https://pixabay.com/users/irinairinafomicheva-25140203/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=13692">irinairinafomicheva</a> from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=13692">Pixabay</a>
-Sound Effect from Pixabay
+2. Success: Sound Effect from Pixabay
 Sound Effect from <a href="https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=6297">Pixabay</a>
 
 */
@@ -97,9 +92,19 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  padding: 1rem;
-  border: 4px dotted #fff;
+  padding: 2rem;
   border-radius: 15px;
+  box-shadow: 1px 1px 2px grey;
+
+  /* From css-pattern.com */
+  --s: 20px; /* size of the lines */
+  --g: 15px; /* gap between lines */
+
+  --c1: #ffd2d2;
+  --c2: #fee5e5;
+
+  background: conic-gradient(at var(--s) calc(100% - var(--s)), #0000 270deg, var(--c1) 0) calc(var(--s) + var(--g)) 0, linear-gradient(var(--c2) var(--s), #0000 0) 0 var(--g), conic-gradient(at var(--s) calc(100% - var(--s)), #0000 90deg, var(--c2) 0 180deg, var(--c1) 0), white;
+  background-size: calc(2 * (var(--s) + var(--g))) calc(2 * (var(--s) + var(--g)));
 }
 
 .circle {
@@ -110,6 +115,7 @@ main {
   width: 150px;
   height: 150px;
   background-color: #fff;
+  border: 1px solid lightgrey;
   border-radius: 50%;
   box-shadow: 2px 2px 0 var(--clr-shadow);
   pointer-events: none;
