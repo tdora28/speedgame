@@ -92,8 +92,11 @@ const clickCircle = (i) => {
     return endGame();
   }
 
-  clickSound.currentTime = 0;
-  clickSound.play();
+  if (clickSound.paused) {
+    clickSound.play();
+  } else {
+    clickSound.currentTime = 0;
+  }
 
   rounds = 0;
   score += 1;
