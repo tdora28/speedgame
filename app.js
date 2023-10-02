@@ -6,6 +6,11 @@ const scoreDisplay = document.querySelector("#score");
 const modal = document.querySelector(".overlay");
 const closeModalButton = document.querySelector("#closeModalButton");
 
+// Music
+let bgMusic = new Audio("./audio/playing-in-color.mp3");
+let clickSound = new Audio("./audio/click.mp3");
+let successSound = new Audio("./audio/success.mp3");
+
 // GLOBAL VARIABLES
 let score = 0;
 let timer;
@@ -29,6 +34,9 @@ const startGame = () => {
   if (rounds >= 3) {
     return endGame();
   }
+
+  // Play music during game
+  bgMusic.play();
 
   startButton.classList.add("hidden");
   endButton.classList.remove("hidden");
@@ -83,6 +91,10 @@ const clickCircle = (i) => {
   if (i !== active) {
     return endGame();
   }
+
+  clickSound.currentTime = 0;
+  clickSound.play();
+
   rounds = 0;
   score += 10;
   scoreDisplay.textContent = score;
@@ -92,10 +104,14 @@ const clickCircle = (i) => {
 const getRndInteger = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 const showModal = () => {
+  bgMusic.pause();
+  successSound.play();
+
   modal.classList.add("visible");
   modal.querySelector("#totalScore").textContent = score;
 
   let message;
+
   if (score < 100) {
     message = "You don't have much appetite. Try again maybe later?";
   } else if (score < 200) {
